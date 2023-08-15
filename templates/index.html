@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <style>
+      body {
+        background-color: rgb(235, 235, 235);
+        font-family: "Courier New", Courier, monospace;
+      }
+      p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: beige;
+        margin-bottom: 30px;
+      }
+
+      .post {
+        padding: 5px 20px;
+        background-color: beige;
+        margin-bottom: 10px;
+      }
+
+      .post p,
+      h3 {
+        margin: 10px;
+      }
+
+      .snippet {
+        width: 60%;
+      }
+    </style>
+  </header>
+
+  <body>
+    <div class="header">
+      <h1>John's Blog</h1>
+    </div>
+
+    {%for post in posts%}
+    <div class="post">
+      <h3>{{post.title}}</h3>
+      <p><strong>{{post.date}}</strong></p>
+      <div class="snippet"><p>{{post.content}}</p></div>
+    </div>
+    {%endfor%}
+  </body>
+</html>
