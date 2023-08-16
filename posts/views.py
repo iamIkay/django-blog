@@ -6,3 +6,10 @@ def posts(request):
     posts = Post.objects.all()
 
     return render(request, 'index.html',{'posts': posts})
+
+
+def post(request, id):
+
+    post = Post.objects.get(id=id)
+
+    return render (request, 'blog-page.html', {'post': post})

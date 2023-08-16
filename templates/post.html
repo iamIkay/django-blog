@@ -6,11 +6,6 @@
         background-color: rgb(235, 235, 235);
         font-family: "Courier New", Courier, monospace;
       }
-      p {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-      }
       .header {
         display: flex;
         align-items: center;
@@ -29,11 +24,7 @@
       .post p,
       h3 {
         margin: 10px;
-      }
-
-      a {
-        text-decoration: none;
-        color: black;
+        text-align: justify;
       }
     </style>
   </header>
@@ -43,15 +34,10 @@
       <h1>John's Blog</h1>
     </div>
 
-    {%for post in posts%}
-    <a href="{% url 'post' post.id %}">
-      <div class="post">
-        <h3>{{post.title}}</h3>
-        <p><strong>{{post.date}}</strong></p>
-        <p>{{post.content|truncatewords:15}}</p>
-      </div>
-    </a>
-
-    {%endfor%}
+    <div class="post">
+      <h3>{{post.title}}</h3>
+      <p><strong>{{post.date}}</strong></p>
+      <p>{{post.content}}</p>
+    </div>
   </body>
 </html>

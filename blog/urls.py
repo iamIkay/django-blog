@@ -20,5 +20,6 @@ from posts import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.posts, name="posts")
+    path("", views.posts, name="posts"),
+    path("posts/<str:id>", views.post, name="post")
 ]
